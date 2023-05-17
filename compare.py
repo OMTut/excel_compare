@@ -1,6 +1,12 @@
-import pandas as pd
-import openpyxl
-
+#import libraries and report if not installed
+try:
+    import pandas as pd
+except ImportError:
+    print('Pandas is not installed')
+try:
+    import openpyxl
+except ImportError:
+    print('Openpyxl is not installed')
 try:
     import numpy as np
 except ImportError:
