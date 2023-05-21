@@ -23,6 +23,8 @@ data1 = pd.DataFrame(sheet1.values)
 sheet2 = workbook2.active
 data2 = pd.DataFrame(sheet2.values)
 
+title_row = 4
+
 # Compare the data
 comparison_values = data1.values == data2.values
 rows, cols = np.where(comparison_values == False)
@@ -30,3 +32,8 @@ rows, cols = np.where(comparison_values == False)
 #Generate report showing the cells that differ
 for row, col in zip(rows, cols):
     print(f'Cells ({row + 1}, {col + 1}) are different')
+    print(f'Cell {data1.iat[row, col]} != {data2.iat[row, col]}')
+    print(f'Row: {row + 1}, {data1.iat[3, col]} are different')
+    
+print(data1.head())
+
